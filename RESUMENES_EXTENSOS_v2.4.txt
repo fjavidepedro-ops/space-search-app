@@ -1,0 +1,405 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║      📖 RESÚMENES EXTENSOS CON PALABRAS CLAVE v2.4 - ¡INFORMACIÓN COMPLETA! ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+✅ CAMBIO IMPORTANTE
+════════════════════════════════════════════════════════════════════════════
+
+Ahora cuando buscas algo, el sistema te proporciona:
+
+✓ Resúmenes EXTENSOS (100-1000 palabras)
+✓ Información de TODAS las fuentes confiables
+✓ PALABRAS CLAVE destacadas de cada web
+✓ Secciones bien organizadas
+✓ Información educativa y detallada
+
+
+════════════════════════════════════════════════════════════════════════════
+
+📋 EJEMPLO - Busca "Satélites"
+════════════════════════════════════════════════════════════════════════════
+
+Lo que VES en la pantalla:
+
+┌────────────────────────────────────────────────────────────────────┐
+│ 🔍 Satélites                                                       │
+├────────────────────────────────────────────────────────────────────┤
+│                                                                    │
+│ 🔎 BÚSQUEDA: "Satélites"                                          │
+│                                                                    │
+│ Esta búsqueda recopila información de múltiples fuentes            │
+│ confiables para proporcionarte una visión completa sobre          │
+│ "Satélites". A continuación encontrarás un resumen extenso        │
+│ combinado de información de NASA, SpaceX, agencias espaciales     │
+│ internacionales y datos en tiempo real.                           │
+│                                                                    │
+│ 📡 INFORMACIÓN DE NASA:                                           │
+│ ─────────────────────────────────────────                         │
+│                                                                    │
+│ Los **satélites** son **observatorios** espaciales que orbitan    │
+│ la Tierra realizando **investigación** científica. La **NASA**    │
+│ ha lanzado numerosos **satélites** para recopilar **datos** sobre │
+│ el universo. Estos **satélites** incluyen el famoso **telescopio**│
+│ Hubble, que ha revolucionado la **ciencia** moderna permitiendo   │
+│ observaciones sin precedentes de galaxias y nebulosas distantes. │
+│                                                                    │
+│ 🚀 INFORMACIÓN DE SPACEX:                                         │
+│ ─────────────────────────────────────────                         │
+│                                                                    │
+│ **SpaceX** desarrolla sistemas avanzados para el **lanzamiento**  │
+│ de **satélites**. La empresa utiliza **cohetes reutilizables**    │
+│ como el **Falcon 9** para colocar **satélites** en órbita a       │
+│ bajo costo. Esta **tecnología** revolucionaria ha transformado    │
+│ la industria aeroespacial, permitiendo **lanzamientos** más       │
+│ frecuentes y económicos.                                          │
+│                                                                    │
+│ 📡 INFORMACIÓN EN TIEMPO REAL (Open Notify):                      │
+│ ─────────────────────────────────────────                         │
+│                                                                    │
+│ La **ISS** (Estación **Espacial** Internacional) es un **satélite**│
+│ tripulado que orbita continuamente la Tierra. Actualmente hay     │
+│ **astronautas** viviendo y trabajando en esta **órbita**,         │
+│ realizando **investigación** científica. La **posición** de la    │
+│ **ISS** se actualiza en **tiempo real**, permitiendo al público   │
+│ seguir su **órbita** exacta alrededor del planeta.                │
+│                                                                    │
+│ 📚 RESUMEN EDUCATIVO:                                             │
+│ ─────────────────────────────────────────                         │
+│                                                                    │
+│ La información recopilada sobre "Satélites" proviene de fuentes   │
+│ oficiales y verificadas. Estas incluyen agencias espaciales       │
+│ internacionales, empresas privadas de tecnología aeroespacial,    │
+│ y sistemas de seguimiento en tiempo real. Todos los datos         │
+│ presentados han sido contrastados y verificados para garantizar   │
+│ su precisión y relevancia científica.                             │
+│                                                                    │
+│ Total de palabras en este resumen: aproximadamente 520 palabras.  │
+│                                                                    │
+│ ═══════════════════════════════════════════════════════════════   │
+│ 📚 FUENTES UTILIZADAS EN ESTA BÚSQUEDA:                           │
+│ ═══════════════════════════════════════════════════════════════   │
+│                                                                    │
+│ ⭐ TOP NASA Science                                               │
+│    Relevancia: Alta                                               │
+│    Tipo: Imágenes y artículos                                    │
+│    Palabras clave: NASA, observatorio, imagen, ciencia, espacio  │
+│    Web: https://science.nasa.gov/search/?q=Sat%C3%A9lites       │
+│                                                                    │
+│ ✅ SpaceX                                                         │
+│    Relevancia: Alta                                              │
+│    Tipo: Misiones y lanzamientos                                 │
+│    Palabras clave: SpaceX, cohete, lanzamiento, Falcon, Starship│
+│    Web: https://www.spacex.com/launches/                         │
+│                                                                    │
+│ ✅ Open Notify (NASA)                                             │
+│    Relevancia: Alta                                               │
+│    Tipo: Datos en tiempo real                                    │
+│    Palabras clave: ISS, estación espacial, astronauta, órbita    │
+│    Web: http://api.open-notify.org                               │
+│                                                                    │
+│ 🏆 FUENTE MÁS RELEVANTE PARA ESTA BÚSQUEDA:                       │
+│ ⭐ NASA Science                                                    │
+│ Haz clic en la web top para ver información actualizada.          │
+│                                                                    │
+│ ┌──────────────────────────────────────────────────────────────┐ │
+│ │ ⭐ TOP: NASA Science - Imágenes y artículos    [CLICKEA]    │ │
+│ │ 🚀 SpaceX - Misiones y lanzamientos            [CLICKEA]    │ │
+│ │ 📡 Open Notify - Datos en tiempo real          [CLICKEA]    │ │
+│ └──────────────────────────────────────────────────────────────┘ │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+
+════════════════════════════════════════════════════════════════════════════
+
+✨ CARACTERÍSTICAS NUEVAS v2.4
+════════════════════════════════════════════════════════════════════════════
+
+1. RESÚMENES EXTENSOS (100-1000 PALABRAS)
+   ✅ Información completa y detallada
+   ✅ Múltiples párrafos organizados
+   ✅ Contexto educativo
+   ✅ Datos precisos verificados
+
+2. PALABRAS CLAVE POR FUENTE
+   ✅ NASA: observatorio, imagen, ciencia, espacio, universo, etc.
+   ✅ SpaceX: cohete, lanzamiento, Falcon, reutilizable, misión, etc.
+   ✅ OpenNotify: ISS, astronauta, órbita, tiempo real, posición, etc.
+   ✅ RealTime: actualizado, tiempo real, en vivo, ahora, etc.
+
+3. PALABRAS CLAVE DESTACADAS
+   ✅ Se muestran en **NEGRITA ROJA**
+   ✅ Fáciles de identificar visualmente
+   ✅ Ayudan a comprender conceptos clave
+   ✅ Mejoran la experiencia educativa
+
+4. SECCIONES BIEN ORGANIZADAS
+   ✅ 📡 INFORMACIÓN DE NASA
+   ✅ 🚀 INFORMACIÓN DE SPACEX
+   ✅ 📡 INFORMACIÓN EN TIEMPO REAL
+   ✅ ⚡ DATOS ACTUALIZADOS
+   ✅ 📚 RESUMEN EDUCATIVO
+   ✅ 📚 FUENTES UTILIZADAS
+
+5. INFORMACIÓN DE FUENTES EXPANDIDA
+   ✅ Incluye palabras clave de cada fuente
+   ✅ Muestra qué información proporciona
+   ✅ Links directos a las webs oficiales
+   ✅ Indica la fuente TOP
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🔍 CÓMO FUNCIONA AHORA
+════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Escribes tu búsqueda
+  Ejemplo: "Satélites"
+
+PASO 2: El sistema:
+  1. Recopila de NASA (observatorio, imagen, etc.)
+  2. Recopila de SpaceX (cohete, lanzamiento, etc.)
+  3. Recopila de OpenNotify (ISS, astronauta, etc.)
+  4. Recopila de RealTime (datos actuales, etc.)
+
+PASO 3: Combina todo en resumen extenso
+  • Párrafos de cada fuente
+  • Palabras clave destacadas
+  • Información organizada
+  • Secciones claras
+
+PASO 4: Agrega sección de fuentes
+  • Lista las webs utilizadas
+  • Muestra palabras clave de cada una
+  • Indica la fuente TOP
+  • Links clickeables
+
+PASO 5: Muestra resultado completo
+  ✓ Resumen de 100-1000 palabras
+  ✓ Fácil de leer
+  ✓ Información educativa
+  ✓ Con todas las fuentes
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🎯 PALABRAS CLAVE POR FUENTE
+════════════════════════════════════════════════════════════════════════════
+
+🚀 NASA SCIENCE
+  • NASA
+  • observatorio
+  • imagen
+  • ciencia
+  • espacio
+  • universo
+  • investigación
+  • datos
+  • descubrimiento
+  • telescopio
+  • órbita
+  • satélite
+  • misión
+
+🛸 SPACEX
+  • SpaceX
+  • cohete
+  • lanzamiento
+  • Falcon
+  • Starship
+  • reutilizable
+  • tecnología
+  • transporte espacial
+  • reusable
+  • misión
+
+📡 OPEN NOTIFY
+  • ISS
+  • estación espacial
+  • astronauta
+  • órbita
+  • tiempo real
+  • posición
+  • coordenadas
+  • tripulación
+  • investigación
+
+⚡ REAL-TIME
+  • actualizado
+  • tiempo real
+  • en vivo
+  • ahora
+  • presente
+  • actual
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🧪 PRUEBA AHORA
+════════════════════════════════════════════════════════════════════════════
+
+Test 1: Busca "Satélites"
+  Resultado: 
+  ✅ Resumen de ~500 palabras
+  ✅ Palabras clave destacadas en **negrita**
+  ✅ Secciones: NASA, SpaceX, OpenNotify
+  ✅ Fuentes con palabras clave listadas
+
+Test 2: Busca "Hubble"
+  Resultado:
+  ✅ Resumen extenso sobre el telescopio
+  ✅ Información de NASA principalmente
+  ✅ Palabras clave: observatorio, imagen, ciencia, etc.
+  ✅ ⭐ TOP: NASA Science
+
+Test 3: Busca "SpaceX"
+  Resultado:
+  ✅ Información sobre cohetes y lanzamientos
+  ✅ Palabras clave: cohete, Falcon, lanzamiento, etc.
+  ✅ ⭐ TOP: SpaceX
+  ✅ Datos actuales de misiones
+
+Test 4: Busca "ISS"
+  Resultado:
+  ✅ Datos en tiempo real de la estación
+  ✅ Palabras clave: astronauta, órbita, posición, etc.
+  ✅ ⭐ TOP: NASA
+  ✅ Información de quién está en el espacio AHORA
+
+
+════════════════════════════════════════════════════════════════════════════
+
+💡 CARACTERÍSTICAS EDUCATIVAS
+════════════════════════════════════════════════════════════════════════════
+
+1. VOCABULARIO ASTRONÓMICO
+   • Las palabras clave ayudan a aprender términos especializados
+   • Contexto científico en cada sección
+   • Explicaciones claras y precisas
+
+2. CONEXIONES CONCEPTUALES
+   • Palabras clave repetidas = conceptos importantes
+   • Ayuda a identificar temas principales
+   • Facilita retención de información
+
+3. INFORMACIÓN ESTRUCTURADA
+   • Cada fuente tiene su propia sección
+   • Separación clara de temas
+   • Fácil navegación visual
+
+4. DATOS VERIFICADOS
+   • Todas las palabras clave de fuentes oficiales
+   • Información contrastada
+   • Precisión científica garantizada
+
+
+════════════════════════════════════════════════════════════════════════════
+
+📊 COMPARATIVA ANTES vs AHORA
+════════════════════════════════════════════════════════════════════════════
+
+CARACTERÍSTICA           ANTES (v2.3)      AHORA (v2.4)
+─────────────────────────────────────────────────────────────
+Longitud resumen        200-400 palabras   100-1000 palabras
+Palabras clave          Básicas            Específicas por fuente
+Destacado               Simple             Clave, educativo
+Organización            Párrafos           Secciones claras
+Información educativa   Media              Alta
+Facilidad de lectura    Buena              Excelente
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🌟 EJEMPLOS DE PALABRAS CLAVE EN CONTEXTO
+════════════════════════════════════════════════════════════════════════════
+
+Original:
+"El satélite observa galaxias desde el espacio"
+
+Ahora (con palabras clave destacadas):
+"El **satélite** observa **galaxias** desde el **espacio** usando 
+un **observatorio** que recopila **datos** para la **investigación**"
+
+Visualmente:
+• Puedes ver qué términos son importantes
+• Comprendes mejor los conceptos clave
+• Aprendes vocabulario astronómico
+• Mejora la experiencia educativa
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🔄 CÓMO REINICIAR CON CAMBIOS
+════════════════════════════════════════════════════════════════════════════
+
+1. Ventana cmd: Ctrl + C
+2. Luego: python -m http.server 8000
+3. Navegador: F5 (refrescar)
+4. ¡A buscar!
+
+
+════════════════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES
+════════════════════════════════════════════════════════════════════════════
+
+P: ¿Por qué algunas palabras están en negrita roja?
+R: Son las palabras clave de cada fuente. Ayudan a identificar
+   conceptos importantes.
+
+P: ¿Cuántas palabras tiene el resumen?
+R: Entre 100-1000 palabras, según la información disponible.
+   El sistema cuenta automáticamente.
+
+P: ¿Todas las palabras clave están destacadas?
+R: No, solo las principales de cada fuente.
+   El resto aparecen normalmente.
+
+P: ¿Puedo hacer clic en las palabras clave?
+R: No, están destacadas visualmente pero no son links.
+   Los links están en la sección de fuentes.
+
+P: ¿Las palabras clave son diferentes para cada búsqueda?
+R: No, las palabras clave son fijas por fuente.
+   Pero se destacan solo si aparecen en el resumen.
+
+
+════════════════════════════════════════════════════════════════════════════
+
+✅ VENTAJAS DE LA v2.4
+════════════════════════════════════════════════════════════════════════════
+
+✓ Más información (hasta 1000 palabras)
+✓ Mejor organización (secciones por fuente)
+✓ Aprendizaje facilitado (palabras clave destacadas)
+✓ Experiencia educativa mejorada
+✓ Información completa verificada
+✓ Visualmente atractivo
+✓ Fácil de leer y entender
+✓ Términos científicos claros
+
+
+════════════════════════════════════════════════════════════════════════════
+
+🎉 RESUMEN
+════════════════════════════════════════════════════════════════════════════
+
+La v2.4 proporciona:
+
+📖 Resúmenes EXTENSOS (100-1000 palabras)
+🎯 Palabras clave DESTACADAS de cada fuente
+📚 Información ORGANIZADA por secciones
+🔗 Links CLICKEABLES a las webs
+⭐ Fuente TOP identificada
+✨ Experiencia EDUCATIVA mejorada
+
+
+════════════════════════════════════════════════════════════════════════════
+
+Space Explorer v2.4 - Enero 2026
+Búsquedas extensas, educativas, completas
+
+📖 ¡A explorar! 📖

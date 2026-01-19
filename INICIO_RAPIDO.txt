@@ -1,0 +1,110 @@
+## 🚀 INICIO RÁPIDO - Space Explorer v2.0
+
+### ⚡ 5 MINUTOS PARA EMPEZAR
+
+#### Paso 1: Abre la carpeta
+```
+c:\Users\Victor\OneDrive\tr IA\space-search-app
+```
+
+#### Paso 2: Abre cmd (Símbolo del sistema)
+- Windows: `Windows + R` → escribe `cmd` → Enter
+- Copia el path: `c:\Users\Victor\OneDrive\tr IA\space-search-app`
+
+#### Paso 3: Escribe en cmd:
+```
+python -m http.server 8000
+```
+
+#### Paso 4: Verás esto:
+```
+Serving HTTP on 0.0.0.0 port 8000...
+```
+
+#### Paso 5: Abre en navegador:
+```
+http://localhost:8000
+```
+
+**¡LISTO! 🎉**
+
+---
+
+## 🔍 PRIMERAS BÚSQUEDAS
+
+### Búsqueda 1 - Datos AHORA
+Escribe: `Posición actual ISS`
+Resultado: Coordenadas GPS en tiempo real
+
+### Búsqueda 2 - Próximas misiones
+Escribe: `próximos lanzamientos`
+Resultado: Calendario de misiones SpaceX
+
+### Búsqueda 3 - Marte
+Escribe: `Perseverance Marte`
+Resultado: Datos del rover marciano
+
+---
+
+## ✨ CARACTERÍSTICAS PRINCIPALES
+
+✅ **Solo fuentes oficiales** (NASA, SpaceX, ESA)
+✅ **Datos en tiempo real** (ISS, astronautas)
+✅ **Resúmenes automáticos** (lo más importante)
+✅ **Busca específica** (satélites, misiones, historia)
+
+---
+
+## 📋 ARCHIVOS IMPORTANTES
+
+| Archivo | Qué hace |
+|---------|----------|
+| `index.html` | La app (abre aquí) |
+| `app.js` | Lógica de búsqueda |
+| `config.js` | Configuración de APIs |
+| `README.md` | Manual completo |
+| `GUIA_APIS.md` | Cómo usar APIs |
+| `ejemplos.html` | Ejemplos de búsquedas |
+
+---
+
+## 🔧 CONFIGURACIÓN (Opcional)
+
+### Si quieres usar NASA API completa:
+
+1. Visita: https://api.nasa.gov
+2. Completa el formulario
+3. Copia tu API Key
+4. En `config.js` (línea 8):
+```javascript
+apiKey: 'TU_CLAVE_AQUI'
+```
+
+**Nota:** Funciona sin configurar, con `DEMO_KEY` limitada.
+
+---
+
+## ❓ PROBLEMAS?
+
+### Si no funciona:
+1. Verifica que Python está instalado: `python --version`
+2. Verifica que estás en la carpeta correcta
+3. Cierra cmd y abre otra ventana
+4. Intenta con: `python -m http.server 8000`
+
+### Si no ve resultados:
+1. Espera 3-5 segundos (carga datos)
+2. Intenta otra búsqueda
+3. Usa palabras clave: "NASA", "ISS", "satélite"
+
+---
+
+## 📖 MÁS INFORMACIÓN
+
+- **README.md** - Manual completo
+- **GUIA_APIS.md** - Documentación técnica
+- **ejemplos.html** - Ejemplos de búsquedas
+
+---
+
+**¡Que disfrutes explorando el espacio! 🌌🚀**

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de uso - Space Explorer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eaeaea;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #e94560;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        
+        .section {
+            background: rgba(22, 33, 62, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #e94560;
+        }
+        
+        .section h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .example {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border-left: 3px solid #0f3460;
+        }
+        
+        .example strong {
+            color: #e94560;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .example code {
+            background: #000;
+            padding: 8px;
+            border-radius: 3px;
+            display: block;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #0f3460;
+        }
+        
+        .table th {
+            background: rgba(15, 52, 96, 0.5);
+            color: #e94560;
+            font-weight: bold;
+        }
+        
+        .note {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .warning {
+            background: rgba(255, 255, 0, 0.1);
+            border-left: 4px solid #ffff00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #0f3460;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Ejemplos de uso - Space Explorer v2.0</h1>
+        
+        <div class="section">
+            <h2>📡 Búsquedas en Tiempo Real</h2>
+            <div class="example">
+                <strong>Posición actual de la ISS</strong>
+                Escribe en el buscador: <code>Posición actual ISS</code>
+                <p>Recibirás: Coordenadas GPS en vivo, altitud, velocidad</p>
+            </div>
+            
+            <div class="example">
+                <strong>Astronautas en órbita ahora</strong>
+                Escribe en el buscador: <code>Astronautas en órbita</code>
+                <p>Recibirás: Lista de profesionales en el espacio, nave donde están</p>
+            </div>
+            
+            <div class="example">
+                <strong>Próximos lanzamientos</strong>
+                Escribe en el buscador: <code>Próximos lanzamientos</code>
+                <p>Recibirás: Misiones programadas, fechas, cohetes, destinos</p>
+            </div>
+            
+            <div class="note">
+                ✅ Estas búsquedas usan datos <strong>EN VIVO</strong> de NASA y SpaceX
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🛰️ Búsquedas de Satélites</h2>
+            <div class="example">
+                <strong>Telescopio Hubble</strong>
+                Escribe: <code>Hubble Space Telescope datos</code>
+                <p>Recibirás: 
+                    • Estado operativo actual
+                    • Altitud: 559 km
+                    • Descubrimientos más importantes
+                    • Imágenes de NASA
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>Satélites GPS</strong>
+                Escribe: <code>satélites GPS</code>
+                <p>Recibirás: Información sobre la constelación de satélites de navegación</p>
+            </div>
+            
+            <div class="example">
+                <strong>Constelación Starlink</strong>
+                Escribe: <code>Starlink satélites</code>
+                <p>Recibirás: Información sobre los satélites de internet de SpaceX</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🚀 Búsquedas de Misiones</h2>
+            <div class="example">
+                <strong>Exploración de Marte</strong>
+                Escribe: <code>Rover Perseverance Marte</code>
+                <p>Recibirás: 
+                    • Estado actual del rover
+                    • Descubrimientos en Marte
+                    • Imágenes del rover
+                    • Próximas misiones a Marte
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>SpaceX Starship</strong>
+                Escribe: <code>Starship SpaceX pruebas</code>
+                <p>Recibirás: 
+                    • Historial de pruebas
+                    • Próximos test
+                    • Especificaciones técnicas
+                    • Planes futuros
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>Luna y estaciones espaciales</strong>
+                Escribe: <code>misión lunar ISS</code>
+                <p>Recibirás: Información sobre estaciones y futuras misiones lunares</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Búsquedas Históricas</h2>
+            <div class="example">
+                <strong>Misiones Apolo</strong>
+                Escribe: <code>Apolo historico</code>
+                <p>Recibirás: 
+                    • Fechas de misiones
+                    • Astronautas involucrados
+                    • Logros históricos
+                    • Datos técnicos
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>Primera salida al espacio</strong>
+                Escribe: <code>primer cosmonauta Historia</code>
+                <p>Recibirás: Información histórica sobre la exploración espacial temprana</p>
+            </div>
+            
+            <div class="example">
+                <strong>Estaciones espaciales</strong>
+                Escribe: <code>estaciones espaciales Historia</code>
+                <p>Recibirás: Evolución de las estaciones desde Salyut hasta hoy</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔬 Búsquedas Especializadas</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Búsqueda</th>
+                        <th>Escribir</th>
+                        <th>Datos que recibirás</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📊 Asteroides cercanos</td>
+                        <td><code>asteroides próximos</code></td>
+                        <td>Distancia, velocidad, tamaño estimado</td>
+                    </tr>
+                    <tr>
+                        <td>☄️ Cometas</td>
+                        <td><code>cometas observables</code></td>
+                        <td>Fecha visible, ubicación, características</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 Observación terrestre</td>
+                        <td><code>satélites observación tierra</code></td>
+                        <td>Aplicaciones, misiones, datos técnicos</td>
+                    </tr>
+                    <tr>
+                        <td>📡 Telecomunicaciones</td>
+                        <td><code>satélites comunicación</code></td>
+                        <td>Cobertura, especificaciones, operadores</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>⚡ Búsquedas por Agencia Espacial</h2>
+            <div class="example">
+                <strong>NASA</strong>
+                Escribe: <code>NASA</code>
+                <p>Recibirás: Imágenes, datos de misiones, artículos científicos</p>
+            </div>
+            
+            <div class="example">
+                <strong>ESA (Agencia Espacial Europea)</strong>
+                Escribe: <code>ESA Europa espacial</code>
+                <p>Recibirás: Datos sobre misiones europeas, Ariane, Copérnico</p>
+            </div>
+            
+            <div class="example">
+                <strong>JAXA (Agencia Espacial Japonesa)</strong>
+                Escribe: <code>JAXA Japón</code>
+                <p>Recibirás: Misiones japonesas, datos de estaciones espaciales</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💡 Trucos y consejos</h2>
+            
+            <div class="note">
+                ✅ <strong>Sé específico:</strong> "Hubble datos 2024" da mejores resultados que solo "Hubble"
+            </div>
+            
+            <div class="note">
+                ✅ <strong>Usa palabras clave:</strong> "NASA", "satélite", "misión", "tiempo real"
+            </div>
+            
+            <div class="note">
+                ✅ <strong>Combina términos:</strong> "Marte exploración datos" busca en múltiples fuentes
+            </div>
+            
+            <div class="warning">
+                ⚠️ <strong>Evita Wikipedia:</strong> La app rechaza automáticamente Wikipedia para obtener datos verificados
+            </div>
+            
+            <div class="warning">
+                ⚠️ <strong>Fuentes confiables:</strong> Solo NASA, SpaceX, ESA, JAXA, Open Notify
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 Tabla de búsquedas rápidas por categoría</h2>
+            
+            <strong style="color: #e94560;">🛰️ SATÉLITES</strong>
+            <div style="margin: 10px 0; padding-left: 20px;">
+                • "satélites activos datos"<br>
+                • "Hubble observatorio"<br>
+                • "satélites GPS GNSS"<br>
+                • "Starlink constelación"
+            </div>
+            
+            <strong style="color: #e94560; margin-top: 15px; display: block;">🚀 MISIONES</strong>
+            <div style="margin: 10px 0; padding-left: 20px;">
+                • "próximas misiones 2026"<br>
+                • "SpaceX Falcon lanzamientos"<br>
+                • "Starship pruebas"<br>
+                • "Rover Perseverance Marte"
+            </div>
+            
+            <strong style="color: #e94560; margin-top: 15px; display: block;">📡 TIEMPO REAL</strong>
+            <div style="margin: 10px 0; padding-left: 20px;">
+                • "posición ISS ahora"<br>
+                • "astronautas en órbita"<br>
+                • "próximos lanzamientos 2026"<br>
+                • "actividad solar"
+            </div>
+            
+            <strong style="color: #e94560; margin-top: 15px; display: block;">📚 HISTORIA</strong>
+            <div style="margin: 10px 0; padding-left: 20px;">
+                • "Apolo histórico"<br>
+                • "primera salida espacio"<br>
+                • "estaciones espaciales evolución"<br>
+                • "hitos exploración espacial"
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔍 Ejemplos de búsquedas completas</h2>
+            <div class="example">
+                <strong>Búsqueda 1: Información completa de ISS</strong>
+                <code>ISS estación espacial datos</code>
+                <p>Resultados esperados:
+                    ✓ Posición GPS en tiempo real
+                    ✓ Astronautas a bordo ahora
+                    ✓ Información histórica
+                    ✓ Especificaciones técnicas (408 km altitud, 90 min órbita)
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>Búsqueda 2: Exploración de Marte</strong>
+                <code>Marte exploración Perseverance</code>
+                <p>Resultados esperados:
+                    ✓ Estado actual del rover
+                    ✓ Descubrimientos científicos
+                    ✓ Imágenes de NASA
+                    ✓ Próximas misiones
+                    ✓ Datos técnicos del rover
+                </p>
+            </div>
+            
+            <div class="example">
+                <strong>Búsqueda 3: Próximos lanzamientos</strong>
+                <code>lanzamientos espaciales 2026</code>
+                <p>Resultados esperados:
+                    ✓ Calendario de misiones SpaceX
+                    ✓ Cohetes y destinos
+                    ✓ Fechas exactas
+                    ✓ Información de agencias espaciales
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>❓ Preguntas frecuentes</h2>
+            
+            <div class="example">
+                <strong>¿Qué pasa si no encuentro resultados?</strong>
+                <p>Intenta con palabras clave más específicas. Por ejemplo, en lugar de "satélite", prueba "Hubble Space Telescope"</p>
+            </div>
+            
+            <div class="example">
+                <strong>¿Cómo puedo ver datos en tiempo real?</strong>
+                <p>Busca términos como "posición ISS", "astronautas ahora", "en vivo", "tiempo real"</p>
+            </div>
+            
+            <div class="example">
+                <strong>¿De dónde vienen los datos?</strong>
+                <p>SOLO de fuentes oficiales: NASA, SpaceX, ESA, JAXA, Open Notify API. Nunca de Wikipedia u otras fuentes no verificadas.</p>
+            </div>
+            
+            <div class="example">
+                <strong>¿Puedo cambiar la actualización de datos?</strong>
+                <p>Los datos se actualizan automáticamente. El tiempo real se actualiza cada 5-30 segundos según la fuente.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Space Explorer v2.0 - Ejemplos de uso</p>
+            <p>Para más información, consulta el README.md o GUIA_APIS.md</p>
+        </footer>
+    </div>
+</body>
+</html>
