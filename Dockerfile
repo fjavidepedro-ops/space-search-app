@@ -4,7 +4,10 @@ WORKDIR /app
 
 # Install dependencies (use npm ci for reproducible builds)
 COPY package*.json ./
-RUN npm ci --only=production
+# Use npm install when package-lock.json may be missing (Cloud Build environment)
+# Install only production dependencies and skip audit/fund messages to keep image build quiet
+ENV NODE_ENV=production
+RUN npm install --production --no-audit --no-fund
 
 # Copy application source
 COPY . .
