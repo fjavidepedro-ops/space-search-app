@@ -106,7 +106,7 @@
     // canvas sizing
     function resize(){
       canvas.width = wrap.clientWidth;
-      canvas.height = 520;
+      canvas.height = wrap.clientHeight || 520;
       draw();
     }
     window.addEventListener('resize', resize);
@@ -207,8 +207,16 @@
     function showPlanetInfo(p){
       info.style.display='block';
       const html = `<div class="results-header"><h3>${p.name}</h3></div>` +
-        `<div style="display:flex; gap:12px; align-items:flex-start;"><div style="flex:0 0 160px"><img src="${p.imgUrl}" style="width:160px; border-radius:8px;"/></div><div class="result-data">${p.info.map(l=>`<div>${l}</div>`).join('')}</div></div>`;
+        `<div class="planet-info-layout"><div class="planet-info-media"><img src="${p.imgUrl}" class="planet-info-image"/></div><div class="result-data">${p.info.map(l=>`<div>${l}</div>`).join('')}</div></div>`;
       info.innerHTML = html;
+
+      // On mobile, move focus to the generated info card for easier reading.
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        requestAnimationFrame(() => {
+          info.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
       // animate pan+zoom to planet
       const targetScale = Math.max(40, Math.min(800, scale*4));
       const canvasCenterX = canvas.width/2, canvasCenterY = canvas.height/2;

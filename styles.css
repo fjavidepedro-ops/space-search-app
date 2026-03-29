@@ -441,6 +441,9 @@ footer p {
 /* planet info styling */
 #planetInfo { background: rgba(15, 22, 36, 0.8); border: 1px solid rgba(233,69,96,0.06); }
 #planetInfo .result-data div { padding: 4px 0; }
+.planet-info-layout { display: flex; gap: 12px; align-items: flex-start; }
+.planet-info-media { flex: 0 0 160px; display: flex; justify-content: center; }
+.planet-info-image { width: 160px; max-width: 100%; border-radius: 8px; display: block; }
 .prompt-container {
     background: rgba(15, 52, 96, 0.6);
     padding: 15px;
@@ -612,6 +615,20 @@ footer p {
         height: 340px;
     }
 
+    .planet-info-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .planet-info-media {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .planet-info-layout .result-data {
+        width: 100%;
+    }
+
     #planetPanel,
     #solarSystemPanel {
         margin-top: 16px;
@@ -746,6 +763,10 @@ footer p {
 
     #solarCanvasWrap {
         height: 260px;
+    }
+
+    .planet-info-image {
+        width: min(220px, 72vw);
     }
 
     .about-content h2 {
