@@ -1,9 +1,9 @@
 # 📋 PROYECTO: Space Explorer v3.0
 
-**Estudiante:** [Tu Nombre]  
-**Institución:** [Tu Escuela/Universidad]  
+**Estudiante:** [Javier de Pedro]  
+**Institución:** [Abat Oliba Loreto]  
 **Fecha:** Enero 2026  
-**Profesor/a:** [Nombre del Profesor]
+**Profesor/a:** [Elisa Fernández Simón]
 
 ---
 

@@ -398,6 +398,40 @@ footer p {
 }
 
 /* Prompts de búsqueda */
+
+/* Satellite map styling */
+#satelliteMap {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#satControls {
+    font-size: 0.95em;
+}
+
+/* Planet panel styles */
+#planetPanel { margin-top: 20px; background: rgba(22,33,62,0.9); padding: 12px; border-radius: 8px; border: 1px solid rgba(233,69,96,0.08); }
+#planetPanel .result-item { background: rgba(15,52,96,0.4); }
+#planetPanel canvas { max-height: 320px; }
+
+/* Solar system panel */
+#solarSystemPanel { margin-top: 20px; padding: 12px; border-radius: 8px; background: rgba(22,33,62,0.9); }
+#solarCanvasWrap { width: 100%; height: 520px; border-radius: 8px; overflow: hidden; background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.9)); }
+#solarCanvas { width: 100%; display: block; }
+#planetInfo { padding: 12px; }
+
+/* Improve aesthetics for solar panel */
+#solarSystemPanel { box-shadow: 0 8px 30px rgba(0,0,0,0.6); border: 1px solid rgba(233,69,96,0.06); }
+#solarCanvas { background: radial-gradient(circle at 40% 30%, #050612 0%, #02020a 40%, #000 100%); cursor: grab; }
+#solarCanvasWrap canvas { display:block; }
+#solarCanvas { touch-action: none; -ms-touch-action: none; user-select: none; }
+
+/* planet info styling */
+#planetInfo { background: rgba(15, 22, 36, 0.8); border: 1px solid rgba(233,69,96,0.06); }
+#planetInfo .result-data div { padding: 4px 0; }
 .prompt-container {
     background: rgba(15, 52, 96, 0.6);
     padding: 15px;
