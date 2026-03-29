@@ -72,8 +72,8 @@
                 <div class="category-buttons">
                     <button class="category-btn" onclick="downloadReferences('Espacio Científico', 'APA')">📄 Exportar APA</button>
                     <button class="category-btn" onclick="downloadReferences('Espacio Científico', 'IEEE')">📋 Exportar IEEE</button>
-                    <button class="category-btn" onclick="displayFactCheck();">🔍 Fact-Checker del Tema</button>
-                    <button class="category-btn" onclick="searchArXiv('exoplanetario');">🔬 Buscar arXiv</button>
+                    <button class="category-btn" onclick="displayDynamicFactCheck();">🔍 Fact-Checker del Tema</button>
+                    <button class="category-btn" onclick="searchArXivAndDisplay(document.getElementById('searchInput').value || 'exoplanetario');">🔬 Buscar arXiv</button>
                 </div>
             </div>
         </div>
@@ -117,6 +117,7 @@
     <script type="module" src="solar-system-3d.js"></script>
     <!-- legacy 2D fallback (kept) -->
     <script src="solar-system.js"></script>
+    <script src="trusted-search.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

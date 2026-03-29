@@ -381,6 +381,10 @@ async function performSearch() {
     showLoadingSpinner();
     
     try {
+        const trustedResult = typeof buildTrustedSearchResult === 'function'
+            ? buildTrustedSearchResult(query)
+            : null;
+
         // Recopilar info de TODAS las fuentes confiables EN TIEMPO REAL
         const [nasaResults, spacexResults, openNotifyResults, noaaResults, realtimeResults] = await Promise.all([
             withTimeout(searchNASA(query), 5000, 'NASA').catch(() => []),
@@ -400,10 +404,11 @@ async function performSearch() {
             realtimeResults
         );
 
-        if (consolidatedResult) {
+        if (consolidatedResult || trustedResult) {
             // Guardar resultados para fact-check dinámico
-            lastSearchResults = consolidatedResult.description || '';
-            displayResults([consolidatedResult]);
+            const outputResults = [trustedResult, consolidatedResult].filter(Boolean);
+            lastSearchResults = outputResults.map(result => result.description || '').join('\n\n');
+            displayResults(outputResults);
         } else {
             showNoResults();
         }
@@ -430,6 +435,8 @@ function withTimeout(promise, ms, apiName) {
 
 // NUEVA FUNCIÓN: Consolidar información de todas las fuentes EN TIEMPO REAL
 function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyResults, noaaResults, realtimeResults) {
+    const safeQuery = typeof query === 'string' && query.trim() ? query.trim() : 'consulta espacial';
+
     // Palabras clave por fuente
     const sourceKeywords = {
         nasa: ['NASA', 'observatorio', 'imagen', 'ciencia', 'espacio', 'universo', 'investigación', 'datos', 'descubrimiento', 'telescopio', 'órbita', 'satélite', 'misión'],
@@ -455,7 +462,7 @@ function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyR
     if (nasaResults.length > 0) {
         nasaResults.slice(0, 2).forEach(item => {
             if (item.description) descriptionsBySource.nasa.push(item.description);
-            links.nasa = 'https://science.nasa.gov/search/?q=' + encodeURIComponent(query);
+            links.nasa = 'https://science.nasa.gov/search/?q=' + encodeURIComponent(safeQuery);
         });
         usedSources.push({ 
             name: 'NASA Science', 
@@ -518,7 +525,7 @@ function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyR
     
     // Crear resumen extenso combinado (100-1000 palabras)
     const extensiveDescription = createExtensiveSummary(
-        query,
+        safeQuery,
         descriptionsBySource,
         sourceKeywords,
         usedSources
@@ -530,7 +537,7 @@ function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyR
     
     // Determinar la fuente más relevante según el tipo de búsqueda
     let topSource = null;
-    const queryLower = query.toLowerCase();
+    const queryLower = safeQuery.toLowerCase();
     
     if (queryLower.includes('hubble') || queryLower.includes('telescopio')) {
         topSource = 'NASA Science';
@@ -569,7 +576,7 @@ function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyR
     
     // Retornar resultado consolidado
     return {
-        title: `🔍 ${query}`,
+        title: `🔍 ${safeQuery}`,
         description: extensiveDescription + sourcesSection,
         url: links.top || 'https://nasa.gov',
         source: '📡 Búsqueda Consolidada - Múltiples Fuentes Oficiales',
@@ -577,14 +584,31 @@ function createConsolidatedResult(query, nasaResults, spacexResults, openNotifyR
         importance: 'critical',
         sources: usedSources,
         topSource: topSource,
-        query: query
+        query: safeQuery
     };
 }
 
 // NUEVA FUNCIÓN: Crear resumen PROFUNDO (~1000 palabras) con datos fascinantes
 function createExtensiveSummary(query, descriptionsBySource, sourceKeywords, usedSources) {
+    const safeQuery = typeof query === 'string' && query.trim() ? query.trim() : 'consulta espacial';
     let summaryText = '';
-    const queryLower = query.toLowerCase();
+    const queryLower = safeQuery.toLowerCase();
+    const usedSectionSnippets = new Set();
+
+    function getDistinctDescription(candidates) {
+        if (!Array.isArray(candidates)) return '';
+        for (const candidate of candidates) {
+            if (!candidate || typeof candidate !== 'string') continue;
+            const normalized = candidate.trim();
+            if (!normalized) continue;
+            const fingerprint = normalized.toLowerCase().slice(0, 180);
+            if (!usedSectionSnippets.has(fingerprint)) {
+                usedSectionSnippets.add(fingerprint);
+                return normalized;
+            }
+        }
+        return '';
+    }
     
     // Datos fascinantes por tipo de búsqueda (cosas que poca gente sabe)
     const deepFacts = {
@@ -1021,7 +1045,7 @@ function createExtensiveSummary(query, descriptionsBySource, sourceKeywords, use
     }
     
     // Iniciar resumen
-    summaryText += `🔬 BÚSQUEDA: "${query}"\n`;
+    summaryText += `🔬 BÚSQUEDA: "${safeQuery}"\n`;
     summaryText += `════════════════════════════════════════════════════════════════\n\n`;
     
     summaryText += `INTRODUCCIÓN ACADÉMICA:\n`;
@@ -1036,9 +1060,11 @@ function createExtensiveSummary(query, descriptionsBySource, sourceKeywords, use
         summaryText += `📡 PERSPECTIVA CIENTÍFICA (NASA):\n`;
         summaryText += `─────────────────────────────────────────────────────────────────\n`;
         
-        const nasaDesc = descriptionsBySource.nasa[0];
-        const highlightedNASA = highlightKeywordsFunc(nasaDesc, sourceKeywords.nasa);
-        summaryText += highlightedNASA + '\n\n';
+        const nasaDesc = getDistinctDescription(descriptionsBySource.nasa);
+        if (nasaDesc) {
+            const highlightedNASA = highlightKeywordsFunc(nasaDesc, sourceKeywords.nasa);
+            summaryText += highlightedNASA + '\n\n';
+        }
         
         summaryText += `CONTEXTO ACADÉMICO ADICIONAL:\n`;
         summaryText += `La **NASA** (Agencia Nacional de Aeronáutica y del Espacio) ha invertido más de `;
@@ -1054,9 +1080,11 @@ function createExtensiveSummary(query, descriptionsBySource, sourceKeywords, use
         summaryText += `🚀 INNOVACIÓN EN INGENIERÍA AEROESPACIAL (SpaceX):\n`;
         summaryText += `─────────────────────────────────────────────────────────────────\n`;
         
-        const spacexDesc = descriptionsBySource.spacex[0];
-        const highlightedSpaceX = highlightKeywordsFunc(spacexDesc, sourceKeywords.spacex);
-        summaryText += highlightedSpaceX + '\n\n';
+        const spacexDesc = getDistinctDescription(descriptionsBySource.spacex);
+        if (spacexDesc) {
+            const highlightedSpaceX = highlightKeywordsFunc(spacexDesc, sourceKeywords.spacex);
+            summaryText += highlightedSpaceX + '\n\n';
+        }
         
         summaryText += `IMPACTO TECNOLÓGICO:\n`;
         summaryText += `**SpaceX** ha democratizado el acceso al espacio mediante **cohetes reutilizables**. `;
@@ -1071,9 +1099,11 @@ function createExtensiveSummary(query, descriptionsBySource, sourceKeywords, use
         summaryText += `📡 DATOS EN TIEMPO REAL (Sistemas de Monitoreo):\n`;
         summaryText += `─────────────────────────────────────────────────────────────────\n`;
         
-        const realtimeDesc = descriptionsBySource.opennotify[0];
-        const highlightedRT = highlightKeywordsFunc(realtimeDesc, sourceKeywords.opennotify);
-        summaryText += highlightedRT + '\n\n';
+        const realtimeDesc = getDistinctDescription(descriptionsBySource.opennotify);
+        if (realtimeDesc) {
+            const highlightedRT = highlightKeywordsFunc(realtimeDesc, sourceKeywords.opennotify);
+            summaryText += highlightedRT + '\n\n';
+        }
         
         summaryText += `IMPORTANCIA CIENTÍFICA:\n`;
         summaryText += `La **ISS** es un **laboratorio orbital** donde se conducen miles de **experimentos** `;
@@ -2833,46 +2863,120 @@ async function verifyClaimsAsync(claims, modal) {
 // ════════════════════════════════════════════════════════════════════
 
 async function searchArXiv(query) {
+    const safeQuery = typeof query === 'string' && query.trim() ? query.trim() : 'espacio';
+
     try {
-        // ArXiv API endpoint
-        const encodedQuery = encodeURIComponent(query);
-        const arxivUrl = `https://api.arxiv.org/query?search_query=${encodedQuery}&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending`;
-        
-        const response = await fetch(arxivUrl);
-        const data = await response.text();
-        
-        // Parse XML response
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data, 'text/xml');
-        
-        const entries = xmlDoc.getElementsByTagName('entry');
-        const papers = [];
-        
-        for (let i = 1; i < entries.length; i++) { // Start from 1 to skip feed summary
-            const entry = entries[i];
-            const title = entry.getElementsByTagName('title')[0]?.textContent || 'N/A';
-            const summary = entry.getElementsByTagName('summary')[0]?.textContent || 'N/A';
-            const authors = Array.from(entry.getElementsByTagName('author'))
-                .map(author => author.getElementsByTagName('name')[0]?.textContent)
-                .join(', ');
-            const id = entry.getElementsByTagName('id')[0]?.textContent.split('/abs/')[1] || 'N/A';
-            const published = entry.getElementsByTagName('published')[0]?.textContent.split('T')[0] || 'N/A';
-            
-            papers.push({
-                title: title.trim(),
-                authors: authors,
-                summary: summary.trim(),
-                url: `https://arxiv.org/abs/${id}`,
-                published: published,
-                type: 'arxiv'
-            });
+        const encodedQuery = encodeURIComponent(safeQuery);
+        const arxivUrls = [
+            `https://export.arxiv.org/api/query?search_query=all:${encodedQuery}&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending`,
+            `https://api.arxiv.org/query?search_query=all:${encodedQuery}&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending`
+        ];
+
+        for (const arxivUrl of arxivUrls) {
+            try {
+                const response = await fetch(arxivUrl);
+                if (!response.ok) continue;
+
+                const data = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+
+                const entries = xmlDoc.getElementsByTagName('entry');
+                const papers = [];
+
+                for (let i = 0; i < entries.length; i++) {
+                    const entry = entries[i];
+                    const title = entry.getElementsByTagName('title')[0]?.textContent || 'N/A';
+                    const summary = entry.getElementsByTagName('summary')[0]?.textContent || 'N/A';
+                    const authors = Array.from(entry.getElementsByTagName('author'))
+                        .map(author => author.getElementsByTagName('name')[0]?.textContent)
+                        .filter(Boolean)
+                        .join(', ');
+                    const rawId = entry.getElementsByTagName('id')[0]?.textContent || '';
+                    const id = rawId.includes('/abs/') ? rawId.split('/abs/')[1] : rawId;
+                    const publishedRaw = entry.getElementsByTagName('published')[0]?.textContent || '';
+                    const published = publishedRaw.includes('T') ? publishedRaw.split('T')[0] : (publishedRaw || 'N/A');
+
+                    if (!title || title === 'N/A') continue;
+
+                    papers.push({
+                        title: title.trim(),
+                        authors: authors || 'Autor no disponible',
+                        summary: summary.trim(),
+                        url: id ? `https://arxiv.org/abs/${id}` : `https://arxiv.org/search/?query=${encodedQuery}&searchtype=all`,
+                        published: published,
+                        type: 'arxiv'
+                    });
+                }
+
+                if (papers.length > 0) {
+                    return papers.slice(0, 5);
+                }
+            } catch (innerError) {
+                console.warn('ArXiv endpoint sin respuesta:', arxivUrl, innerError);
+            }
         }
-        
-        return papers;
+
+        return [];
     } catch (error) {
         console.error('ArXiv search error:', error);
         return [];
     }
+}
+
+async function searchArXivAndDisplay(query) {
+    const searchInput = document.getElementById('searchInput');
+    const effectiveQuery = typeof query === 'string' && query.trim()
+        ? query.trim()
+        : (searchInput?.value?.trim() || 'exoplanetas');
+
+    if (searchInput && !searchInput.value.trim()) {
+        searchInput.value = effectiveQuery;
+    }
+
+    lastSearchQuery = effectiveQuery;
+    showLoadingSpinner();
+
+    try {
+        const papers = await searchArXiv(effectiveQuery);
+
+        let mappedResults = papers.map((paper, index) => ({
+            title: `🔬 arXiv ${index + 1}: ${paper.title}`,
+            description: `${paper.summary}\n\nAutores: ${paper.authors}\nPublicado: ${paper.published}`,
+            url: paper.url,
+            source: '📚 arXiv - Preprints Científicos',
+            type: 'academic',
+            importance: 'high',
+            date: paper.published
+        }));
+
+        // Fallback robusto cuando arXiv rate-limita o bloquea por CORS
+        if (mappedResults.length === 0) {
+            mappedResults = [
+                {
+                    title: `🔎 arXiv - Búsqueda manual: ${effectiveQuery}`,
+                    description: 'No se pudo recuperar el feed de arXiv en este momento (límite temporal o restricción de red). Se abre la búsqueda oficial para que accedas directamente al paper más reciente.',
+                    url: `https://arxiv.org/search/?query=${encodeURIComponent(effectiveQuery)}&searchtype=all&source=header`,
+                    source: '📚 arXiv - Portal Oficial',
+                    type: 'academic',
+                    importance: 'medium'
+                }
+            ];
+        }
+
+        lastSearchResults = mappedResults.map(result => result.description).join('\n\n');
+        displayResults(mappedResults);
+    } catch (error) {
+        console.error('Error mostrando resultados arXiv:', error);
+        showNoResults();
+    } finally {
+        hideLoadingSpinner();
+    }
+}
+
+// Alias de compatibilidad para botones antiguos
+function displayFactCheck() {
+    displayDynamicFactCheck();
 }
 
 // Integrar búsqueda arXiv en búsqueda principal
